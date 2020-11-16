@@ -35,6 +35,7 @@ export class UserDetailComponent implements OnInit
       }
     );
   }
+
   newChanges(): void
   {
     this.btnsav = "btn btn-primary";
@@ -46,6 +47,7 @@ export class UserDetailComponent implements OnInit
     this.usersvc.edit(this.user).subscribe(
       res => {
         console.debug("Saved!");
+        this.router.navigateByUrl("/users");
         this.btnsav = "btn btn-success";
         this.saveMsg = "Saved!";
       },

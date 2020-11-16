@@ -13,6 +13,7 @@ export class VendorDetailComponent implements OnInit
 {
   vendor: Vendor;
   btnsav: string = "btn btn-primary";
+  btndel: string = "btn btn-danger";
   saveMsg: string = "Save";
 
   constructor(
@@ -46,6 +47,7 @@ export class VendorDetailComponent implements OnInit
     this.vendorsvc.edit(this.vendor).subscribe(
       res => {
         console.debug("Saved!");
+        this.router.navigateByUrl("/vendors");
         this.btnsav = "btn btn-success";
         this.saveMsg = "Saved!";
       },

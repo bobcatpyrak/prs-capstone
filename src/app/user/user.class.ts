@@ -7,8 +7,8 @@ export class User
     lastName: string = "";
     phoneNumber: string = "";
     email: string = "";
-    isReviewer: boolean = false;
-    isAdmin: boolean = false;
+    reviewer: boolean = false;
+    admin: boolean = false;
 
     constructor()
     {

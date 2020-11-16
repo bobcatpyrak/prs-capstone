@@ -1,0 +1,50 @@
+<app-menu></app-menu>
+<div class="h3">User Details for New User</div>
+<table class="table">
+    <tbody>
+        <tr>
+            <th scope="row">ID</th>
+            <td><input [(ngModel)]="user.id" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th scope="row">Username</th>
+            <td><input [(ngModel)]="user.username" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">Password</th>
+            <td><input [(ngModel)]="user.password" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">First Name</th>
+            <td><input [(ngModel)]="user.firstName" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">Last Name</th>
+            <td><input [(ngModel)]="user.lastName" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">E-mail</th>
+            <td><input [(ngModel)]="user.email" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">Phone</th>
+            <td><input [(ngModel)]="user.phoneNumber" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">Admin?</th>
+            <td><input [(ngModel)]="user.admin" type="checkbox" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">Reviewer?</th>
+            <td><input [(ngModel)]="user.reviewer" type="checkbox" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button"  [ngClass]="btnsav" class="btn btn-primary" (click)="saveChanges()">{{saveMsg}}</button>
+            </td>
+            <td>
+                <button type="button"  [ngClass]="btndel" class="btn btn-danger" routerLink="/users">Discard New User</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

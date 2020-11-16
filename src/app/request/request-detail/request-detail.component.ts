@@ -46,6 +46,8 @@ export class RequestDetailComponent implements OnInit
     this.requestsvc.edit(this.request).subscribe(
       res => {
         console.debug("Saved!");
+        this.router.navigateByUrl("/requests");
+
         this.btnsav = "btn btn-success";
         this.saveMsg = "Saved!";
       },

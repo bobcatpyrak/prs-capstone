@@ -17,6 +17,10 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { RequestDetailComponent } from './request/request-detail/request-detail.
     UserDetailComponent,
     VendorDetailComponent,
     ProductDetailComponent,
-    RequestDetailComponent
+    RequestDetailComponent,
+    UserCreateComponent,
+    VendorCreateComponent,
+    ProductCreateComponent,
+    RequestCreateComponent
   ],
   imports: [
     BrowserModule,

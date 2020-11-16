@@ -46,6 +46,7 @@ export class ProductDetailComponent implements OnInit
     this.productsvc.edit(this.product).subscribe(
       res => {
         console.debug("Saved!");
+        this.router.navigateByUrl("/products");
         this.btnsav = "btn btn-success";
         this.saveMsg = "Saved!";
       },
