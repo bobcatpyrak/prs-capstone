@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+<div class="h3">Vendor List
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vendor of vendors">
+            <th scope="row">{{vendor.id}}</th>
+            <td>{{vendor.code}}</td>
+            <td>{{vendor.name}}</td>
+            <td>{{vendor.address}}<br>{{vendor.city}}, {{vendor.state}} {{vendor.zip}}</td>
+            <td>{{vendor.email}}</td>
+            <td>{{vendor.phoneNumber}}</td>
+            <td>
+                <a routerLink="/vendors/detail/{{vendor.id}}">Details</a>    
+            </td>
+
+        </tr>
+    </tbody>
+</table>

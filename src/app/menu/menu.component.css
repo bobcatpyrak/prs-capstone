@@ -1,0 +1,14 @@
+nav
+{
+    background-color: darkblue
+}
+li
+{
+    display: inline;
+    padding: 20px;
+    font-weight: bold;
+}
+a
+{
+    color: silver
+}

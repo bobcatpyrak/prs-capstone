@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+<div class="h3">User List
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Admin?</th>
+            <th scope="col">Reviewer?</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <th scope="row">{{user.id}}</th>
+            <td>{{user.username}}</td>
+            <td>{{user.firstName}} {{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phoneNumber}}</td>
+            <td>{{user.admin}}</td>
+            <td>{{user.reviewer}}</td>
+            <td>
+                <a routerLink="/users/detail/{{user.id}}">Details</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

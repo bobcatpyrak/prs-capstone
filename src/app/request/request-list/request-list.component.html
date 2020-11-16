@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<div class="h3">Request List
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">User</th>
+            <th scope="col">Description</th>
+            <th scope="col">Justification</th>
+            <th scope="col">Date Submitted</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let request of requests">
+            <th scope="row">{{request.id}}</th>
+            <td>{{request.user.username}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.justification}}</td>
+            <td>{{request.submittedDate}}</td>
+            <td>{{request.dateNeeded}}</td>
+            <td>{{request.status}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -9,7 +9,12 @@ import { HomeComponent } from './core/home/home.component';
 import { AboutComponent } from './core/about/about.component';
 import { E404Component } from './core/e404/e404.component';
 import { MenuComponent } from './menu/menu.component';
-import { MenuitemComponent } from './menu/menuitem/menuitem.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { RequestListComponent } from './request/request-list/request-list.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { MenuitemComponent } from './menu/menuitem/menuitem.component';
     AboutComponent,
     E404Component,
     MenuComponent,
-    MenuitemComponent
+    UserListComponent,
+    VendorListComponent,
+    ProductListComponent,
+    RequestListComponent,
+    UserDetailComponent,
+    VendorDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,50 @@
+<app-menu></app-menu>
+<div class="h3">Vendor Details for {{vendor.name}}</div>
+<table class="table">
+    <tbody>
+        <tr>
+            <th scope="row">ID</th>
+            <td><input [(ngModel)]="vendor.id" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th scope="row">Code</th>
+            <td><input [(ngModel)]="vendor.code" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">Name</th>
+            <td><input [(ngModel)]="vendor.name" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">Address</th>
+            <td><input [(ngModel)]="vendor.address" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">City</th>
+            <td><input [(ngModel)]="vendor.city" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">State</th>
+            <td><input [(ngModel)]="vendor.state" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">Zip</th>
+            <td><input [(ngModel)]="vendor.zip" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">Phone</th>
+            <td><input [(ngModel)]="vendor.phoneNumber" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td><input [(ngModel)]="vendor.email" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button"  [ngClass]="btnsav" class="btn btn-primary" (click)="saveChanges()">{{saveMsg}}</button>
+            </td>
+            <td>
+                <button type="button"  [ngClass]="btndel" class="btn btn-danger" (click)="deleteUser()">Delete User</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
