@@ -4,11 +4,11 @@ import { Product } from '../product.class';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  selector: 'app-product-edit',
+  templateUrl: './product-edit.component.html',
+  styleUrls: ['./product-edit.component.css']
 })
-export class ProductDetailComponent implements OnInit 
+export class ProductEditComponent implements OnInit 
 {
   product: Product;
   btnsav: string = "btn btn-primary";
@@ -39,6 +39,23 @@ export class ProductDetailComponent implements OnInit
   {
     this.btnsav = "btn btn-primary";
     this.saveMsg = "Save";
+  }
+
+  saveChanges(): void
+  {
+    this.productsvc.edit(this.product).subscribe(
+      res => {
+        console.debug("Saved!");
+        this.router.navigateByUrl("/products");
+        this.btnsav = "btn btn-success";
+        this.saveMsg = "Saved!";
+      },
+      err => {
+        this.btnsav = "btn btn-danger";
+        this.saveMsg = "Failed!";
+        console.error("Could not save changes: ", err);
+      }
+    );
   }
 
   deleteProduct(): void

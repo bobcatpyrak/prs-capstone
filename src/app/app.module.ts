@@ -21,6 +21,11 @@ import { UserCreateComponent } from './user/user-create/user-create.component';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { SortPipe } from './core/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,12 @@ import { RequestCreateComponent } from './request/request-create/request-create.
     UserCreateComponent,
     VendorCreateComponent,
     ProductCreateComponent,
-    RequestCreateComponent
+    RequestCreateComponent,
+    UserEditComponent,
+    VendorEditComponent,
+    ProductEditComponent,
+    RequestEditComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

@@ -7,17 +7,17 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Code</th>
-            <th scope="col">Name</th>
-            <th scope="col">Address</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
+            <th scope="col"><a (click)="sortColumn('id')">ID</a></th>
+            <th scope="col"><a (click)="sortColumn('code')">Code</a></th>
+            <th scope="col"><a (click)="sortColumn('name')">Name</a></th>
+            <th scope="col"><a (click)="sortColumn('state')">Address</a></th>
+            <th scope="col"><a (click)="sortColumn('email')">Email</a></th>
+            <th scope="col"><a (click)="sortColumn('phoneNumber')">Phone</a></th>
             <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let vendor of vendors">
+        <tr *ngFor="let vendor of vendors | sort:sortCriteria:ascSequence">
             <th scope="row">{{vendor.id}}</th>
             <td>{{vendor.code}}</td>
             <td>{{vendor.name}}</td>
@@ -25,7 +25,8 @@
             <td>{{vendor.email}}</td>
             <td>{{vendor.phoneNumber}}</td>
             <td>
-                <a routerLink="/vendors/detail/{{vendor.id}}">Details</a>    
+                <a routerLink="/vendors/detail/{{vendor.id}}">Details</a> | 
+                <a routerLink="/vendors/edit/{{vendor.id}}">Edit</a>   
             </td>
 
         </tr>

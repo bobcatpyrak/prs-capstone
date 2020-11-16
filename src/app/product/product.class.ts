@@ -9,6 +9,7 @@ export class Product
     price: number = 0;
     unit: string;
     photoPath: string;
+    vendorName: string = "";
 
 
     constructor ()

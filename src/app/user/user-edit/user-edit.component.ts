@@ -4,11 +4,11 @@ import { User } from '../user.class';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  selector: 'app-user-edit',
+  templateUrl: './user-edit.component.html',
+  styleUrls: ['./user-edit.component.css']
 })
-export class UserDetailComponent implements OnInit 
+export class UserEditComponent implements OnInit 
 {
   user: User;
   btnsav: string = "btn btn-primary";
@@ -40,6 +40,23 @@ export class UserDetailComponent implements OnInit
   {
     this.btnsav = "btn btn-primary";
     this.saveMsg = "Save";
+  }
+
+  saveChanges(): void
+  {
+    this.usersvc.edit(this.user).subscribe(
+      res => {
+        console.debug("Saved!");
+        this.router.navigateByUrl("/users");
+        this.btnsav = "btn btn-success";
+        this.saveMsg = "Saved!";
+      },
+      err => {
+        this.btnsav = "btn btn-danger";
+        this.saveMsg = "Failed!";
+        console.error("Could not save changes: ", err);
+      }
+    );
   }
 
   deleteUser(): void

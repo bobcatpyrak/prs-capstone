@@ -5,11 +5,11 @@ import { Vendor } from '../vendor.class';
 
 
 @Component({
-  selector: 'app-vendor-detail',
-  templateUrl: './vendor-detail.component.html',
-  styleUrls: ['./vendor-detail.component.css']
+  selector: 'app-vendor-edit',
+  templateUrl: './vendor-edit.component.html',
+  styleUrls: ['./vendor-edit.component.css']
 })
-export class VendorDetailComponent implements OnInit 
+export class VendorEditComponent implements OnInit 
 {
   vendor: Vendor;
   btnsav: string = "btn btn-primary";
@@ -40,6 +40,23 @@ export class VendorDetailComponent implements OnInit
   {
     this.btnsav = "btn btn-primary";
     this.saveMsg = "Save";
+  }
+
+  saveChanges(): void
+  {
+    this.vendorsvc.edit(this.vendor).subscribe(
+      res => {
+        console.debug("Saved!");
+        this.router.navigateByUrl("/vendors");
+        this.btnsav = "btn btn-success";
+        this.saveMsg = "Saved!";
+      },
+      err => {
+        this.btnsav = "btn btn-danger";
+        this.saveMsg = "Failed!";
+        console.error("Could not save changes: ", err);
+      }
+    );
   }
 
   deleteVendor(): void

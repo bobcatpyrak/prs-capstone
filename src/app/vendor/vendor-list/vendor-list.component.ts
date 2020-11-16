@@ -10,6 +10,8 @@ import { VendorService } from '../vendor.service';
 export class VendorListComponent implements OnInit {
 
   vendors: Vendor[] = [];
+  sortCriteria: string = "id";
+  ascSequence: boolean = true;
 
   constructor(
     private vendorsvc: VendorService
@@ -28,6 +30,17 @@ export class VendorListComponent implements OnInit {
         console.error(err);
       }
     )
+  }
+
+  sortColumn(column: string): void
+  {
+    if(column == this.sortCriteria)
+    {
+      this.ascSequence = !this.ascSequence;
+      return;
+    }
+    this.sortCriteria = column;
+    this.ascSequence = true;
   }
 
 }

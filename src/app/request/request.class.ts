@@ -12,6 +12,7 @@ export class Request
     total: number = 0;
     submittedDate: string = "";
     reasonForRejection: string;
+    username: string = "";
 
     constructor()
     {

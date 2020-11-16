@@ -8,39 +8,39 @@
         </tr>
         <tr>
             <th scope="row">Code</th>
-            <td><input [(ngModel)]="vendor.code" type="text" disabled></td>
+            <td><input [(ngModel)]="vendor.code" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Name</th>
-            <td><input [(ngModel)]="vendor.name" type="text" disabled></td>
+            <td><input [(ngModel)]="vendor.name" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Address</th>
-            <td><input [(ngModel)]="vendor.address" type="text" disabled></td>
+            <td><input [(ngModel)]="vendor.address" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">City</th>
-            <td><input [(ngModel)]="vendor.city" type="text" disabled></td>
+            <td><input [(ngModel)]="vendor.city" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">State</th>
-            <td><input [(ngModel)]="vendor.state" type="text" disabled></td>
+            <td><input [(ngModel)]="vendor.state" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Zip</th>
-            <td><input [(ngModel)]="vendor.zip" type="text" disabled></td>
+            <td><input [(ngModel)]="vendor.zip" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Phone</th>
-            <td><input [(ngModel)]="vendor.phoneNumber" type="text" disabled></td>
+            <td><input [(ngModel)]="vendor.phoneNumber" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Email</th>
-            <td><input [(ngModel)]="vendor.email" type="text" disabled></td>
+            <td><input [(ngModel)]="vendor.email" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <td>
-                <button type="button"  [ngClass]="btnsav" class="btn btn-primary" routerLink="/vendors">Return to Vendors</button>
+                <button type="button"  [ngClass]="btnsav" class="btn btn-primary" (click)="saveChanges()">{{saveMsg}}</button>
             </td>
             <td>
                 <button type="button"  [ngClass]="btndel" class="btn btn-danger" (click)="deleteVendor()">Delete Vendor</button>

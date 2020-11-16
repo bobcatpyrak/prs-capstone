@@ -8,43 +8,43 @@
         </tr>
         <tr>
             <th scope="row">User</th>
-            <td><input [(ngModel)]="request.user.username" type="text" disabled></td>
+            <td><input [(ngModel)]="request.user.username" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Description</th>
-            <td><input [(ngModel)]="request.description" type="text" disabled></td>
+            <td><input [(ngModel)]="request.description" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Justification</th>
-            <td><input [(ngModel)]="request.justification" type="text" disabled></td>
+            <td><input [(ngModel)]="request.justification" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Delivery Mode</th>
-            <td><input [(ngModel)]="request.deliveryMode" type="text" disabled></td>
+            <td><input [(ngModel)]="request.deliveryMode" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Total</th>
-            <td><input [(ngModel)]="request.total" type="text" disabled></td>
+            <td><input [(ngModel)]="request.total" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Date Needed</th>
-            <td><input [(ngModel)]="request.dateNeeded" type="text" disabled></td>
+            <td><input [(ngModel)]="request.dateNeeded" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Date Submitted</th>
-            <td><input [(ngModel)]="request.submittedDate" type="text" disabled></td>
+            <td><input [(ngModel)]="request.submittedDate" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Status</th>
-            <td><input [(ngModel)]="request.status" type="text" disabled></td>
+            <td><input [(ngModel)]="request.status" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Reason for Rejection</th>
-            <td><input [(ngModel)]="request.reasonForRejection" type="text" disabled></td>
+            <td><input [(ngModel)]="request.reasonForRejection" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <td>
-                <button type="button"  [ngClass]="btnsav" class="btn btn-primary" routerLink="/requests">Return to Requests</button>
+                <button type="button"  [ngClass]="btnsav" class="btn btn-primary" (click)="saveChanges()">{{saveMsg}}</button>
             </td>
             <td>
                 <button type="button"  [ngClass]="btndel" class="btn btn-danger" (click)="deleteRequest()">Delete Request</button>

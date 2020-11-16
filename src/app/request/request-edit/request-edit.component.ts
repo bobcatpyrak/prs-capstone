@@ -4,11 +4,11 @@ import { Request } from '../request.class';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-request-detail',
-  templateUrl: './request-detail.component.html',
-  styleUrls: ['./request-detail.component.css']
+  selector: 'app-request-edit',
+  templateUrl: './request-edit.component.html',
+  styleUrls: ['./request-edit.component.css']
 })
-export class RequestDetailComponent implements OnInit 
+export class RequestEditComponent implements OnInit 
 {
   request: Request;
   btnsav: string = "btn btn-primary";
@@ -39,6 +39,24 @@ export class RequestDetailComponent implements OnInit
   {
     this.btnsav = "btn btn-primary";
     this.saveMsg = "Save";
+  }
+
+  saveChanges(): void
+  {
+    this.requestsvc.edit(this.request).subscribe(
+      res => {
+        console.debug("Saved!");
+        this.router.navigateByUrl("/requests");
+
+        this.btnsav = "btn btn-success";
+        this.saveMsg = "Saved!";
+      },
+      err => {
+        this.btnsav = "btn btn-danger";
+        this.saveMsg = "Failed!";
+        console.error("Could not save changes: ", err);
+      }
+    );
   }
 
   deleteRequest(): void

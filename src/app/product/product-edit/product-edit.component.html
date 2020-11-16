@@ -8,31 +8,31 @@
         </tr>
         <tr>
             <th scope="row">Vendor</th>
-            <td><input [(ngModel)]="product.vendor.name" type="text" disabled disabled></td>
+            <td><input [(ngModel)]="product.vendor.name" type="text" (click)="newChanges()" disabled></td>
         </tr>
         <tr>
             <th scope="row">Part Number</th>
-            <td><input [(ngModel)]="product.partNumber" type="text" disabled></td>
+            <td><input [(ngModel)]="product.partNumber" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Name</th>
-            <td><input [(ngModel)]="product.name" type="text" disabled></td>
+            <td><input [(ngModel)]="product.name" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Price</th>
-            <td><input [(ngModel)]="product.price" type="text" disabled></td>
+            <td><input [(ngModel)]="product.price" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Unit</th>
-            <td><input [(ngModel)]="product.unit" type="text" disabled></td>
+            <td><input [(ngModel)]="product.unit" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Image</th>
-            <td><input [(ngModel)]="product.photoPath" type="text" disabled></td>
+            <td><input [(ngModel)]="product.photoPath" type="text" (click)="newChanges()"></td>
         </tr>
         <tr>
             <td>
-                <button type="button"  [ngClass]="btnsav" class="btn btn-primary" routerLink="/products">Return to Products</button>
+                <button type="button"  [ngClass]="btnsav" class="btn btn-primary" (click)="saveChanges()">{{saveMsg}}</button>
             </td>
             <td>
                 <button type="button"  [ngClass]="btndel" class="btn btn-danger" (click)="deleteProduct()">Delete Product</button>

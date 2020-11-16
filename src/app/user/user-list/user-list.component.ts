@@ -10,6 +10,8 @@ import { UserService } from '../user.service';
 export class UserListComponent implements OnInit {
 
   users: User[] = [];
+  sortCriteria: string = "id";
+  ascSequence: boolean = true;
 
   constructor(
     private usersvc: UserService
@@ -28,6 +30,17 @@ export class UserListComponent implements OnInit {
         console.error(err);
       }
     )
+  }
+
+  sortColumn(column: string): void
+  {
+    if(column == this.sortCriteria)
+    {
+      this.ascSequence = !this.ascSequence;
+      return;
+    }
+    this.sortCriteria = column;
+    this.ascSequence = true;
   }
 
 }

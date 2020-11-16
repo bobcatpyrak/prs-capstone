@@ -10,6 +10,8 @@ import { RequestService } from '../request.service';
 export class RequestListComponent implements OnInit {
 
   requests: Request[] = [];
+  sortCriteria: string = "id";
+  ascSequence: boolean = true;
 
   constructor(
     private requestsvc: RequestService
@@ -22,12 +24,27 @@ export class RequestListComponent implements OnInit {
       {
         console.log(res);
         this.requests = res as Request[];
+        for(let r of this.requests)
+        {
+          r.username = r.user.username;
+        }
       },
       err =>
       {
         console.error(err);
       }
     )
+  }
+
+  sortColumn(column: string): void
+  {
+    if(column == this.sortCriteria)
+    {
+      this.ascSequence = !this.ascSequence;
+      return;
+    }
+    this.sortCriteria = column;
+    this.ascSequence = true;
   }
 
 }
