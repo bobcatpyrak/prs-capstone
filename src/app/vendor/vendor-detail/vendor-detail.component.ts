@@ -50,12 +50,14 @@ export class VendorDetailComponent implements OnInit
         this.saveMsg = "Saved!";
       },
       err => {
+        this.btnsav = "btn btn-danger";
+        this.saveMsg = "Failed!";
         console.error("Could not save changes: ", err);
       }
     );
   }
 
-  deleteUser(): void
+  deleteVendor(): void
   {
     this.vendorsvc.delete(this.vendor).subscribe(
       res => {

@@ -15,6 +15,8 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { RequestListComponent } from './request/request-list/request-list.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.comp
     ProductListComponent,
     RequestListComponent,
     UserDetailComponent,
-    VendorDetailComponent
+    VendorDetailComponent,
+    ProductDetailComponent,
+    RequestDetailComponent
   ],
   imports: [
     BrowserModule,

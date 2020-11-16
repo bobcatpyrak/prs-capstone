@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
-import { User } from '../user.class';
+import { RequestService } from '../request.service';
+import { Request } from '../request.class';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  selector: 'app-request-detail',
+  templateUrl: './request-detail.component.html',
+  styleUrls: ['./request-detail.component.css']
 })
-export class UserDetailComponent implements OnInit 
+export class RequestDetailComponent implements OnInit 
 {
-  user: User;
+  request: Request;
   btnsav: string = "btn btn-primary";
   btndel: string = "btn btn-danger";
   saveMsg: string = "Save";
 
   constructor(
-    private usersvc: UserService,
+    private requestsvc: RequestService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -25,10 +25,10 @@ export class UserDetailComponent implements OnInit
   {
     let id = this.route.snapshot.params.id;
 
-    this.usersvc.get(id).subscribe(
+    this.requestsvc.get(id).subscribe(
       res => {
-        console.debug("User:", res);
-        this.user = res;
+        console.debug("Request:", res);
+        this.request = res;
       },
       err => {
         console.error(err);
@@ -43,7 +43,7 @@ export class UserDetailComponent implements OnInit
 
   saveChanges(): void
   {
-    this.usersvc.edit(this.user).subscribe(
+    this.requestsvc.edit(this.request).subscribe(
       res => {
         console.debug("Saved!");
         this.btnsav = "btn btn-success";
@@ -57,15 +57,15 @@ export class UserDetailComponent implements OnInit
     );
   }
 
-  deleteUser(): void
+  deleteRequest(): void
   {
-    this.usersvc.delete(this.user).subscribe(
+    this.requestsvc.delete(this.request).subscribe(
       res => {
-        console.debug("User deleted!");
-        this.router.navigateByUrl("/users");
+        console.debug("Request deleted!");
+        this.router.navigateByUrl("/requests");
       },
       err => {
-        console.error("Could not delete user: ", err);
+        console.error("Could not delete request: ", err);
       }
     );
   }

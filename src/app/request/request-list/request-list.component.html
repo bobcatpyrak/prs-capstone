@@ -24,6 +24,9 @@
             <td>{{request.submittedDate}}</td>
             <td>{{request.dateNeeded}}</td>
             <td>{{request.status}}</td>
+            <td>
+                <a routerLink="/requests/detail/{{request.id}}">Details</a>
+            </td>
         </tr>
     </tbody>
 </table>

@@ -9,7 +9,9 @@ import { UserDetailComponent } from "./user/user-detail/user-detail.component";
 import { VendorListComponent } from "./vendor/vendor-list/vendor-list.component";
 import { VendorDetailComponent } from "./vendor/vendor-detail/vendor-detail.component";
 import { ProductListComponent } from "./product/product-list/product-list.component";
+import { ProductDetailComponent } from "./product/product-detail/product-detail.component";
 import { RequestListComponent } from "./request/request-list/request-list.component";
+import { RequestDetailComponent } from "./request/request-detail/request-detail.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: "vendors", component: VendorListComponent },
   { path: "vendors/detail/:id", component: VendorDetailComponent },
   { path: "products", component: ProductListComponent },
+  { path: "products/detail/:id", component: ProductDetailComponent },
   { path: "requests", component: RequestListComponent },
+  { path: "requests/detail/:id", component: RequestDetailComponent },
   { path: "**", component: E404Component }
 ];
 
