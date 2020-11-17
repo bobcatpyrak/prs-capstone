@@ -62,12 +62,41 @@ export class RequestLineComponent implements OnInit
     );
   }
 
+  refreshRequest():void
+  {
+    let id = this.route.snapshot.params.id;
+
+    this.requestsvc.get(id).subscribe(
+      res => {
+        console.debug("Request:", res);
+        this.request = res;
+      },
+      err => {
+        console.error(err);
+      }
+    );
+  }
+
+  submit():void
+  {
+    this.requestsvc.review(this.request).subscribe(
+      res =>{
+        console.debug("Submitted for review");
+        this.refreshRequest();
+      },
+      err => {
+        console.error("Failed to submit for review", err);
+      }
+    )
+  }
+
   deleteLine(line:RequestLine):void
   {
     this.linessvc.delete(line).subscribe(
       res => {
         console.debug("Line Item deleted!");
         this.refreshLines();
+        this.refreshRequest();
       },
       err => {
         console.error("Could not delete line item: ", err);

@@ -14,3 +14,15 @@ span
 {
     padding: 25px
 }
+#deleteLink 
+{
+    color: #007bff;
+}
+  
+  #deleteLink:hover 
+{
+    cursor: pointer;
+    color: #0056b3;
+    text-decoration: underline;
+}
+  

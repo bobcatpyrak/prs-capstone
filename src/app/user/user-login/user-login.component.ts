@@ -32,7 +32,9 @@ export class UserLoginComponent implements OnInit
       res => 
       {
         this.syssvc.user = res;
+        console.log(this.syssvc.user);
         this.router.navigateByUrl("/home");
+        // THIS DOESN'T WORK. START HERE
       },
       err =>
       {

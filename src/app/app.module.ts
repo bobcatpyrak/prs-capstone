@@ -31,6 +31,7 @@ import { UserSearchPipe } from './user/user-search.pipe';
 import { RequestLineComponent } from './requestline/requestline.component';
 import { RequestLineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestLineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+import { RequestReviewListComponent } from './request-review/request-review-list/request-review-list.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { RequestLineEditComponent } from './requestline/requestline-edit/request
     UserSearchPipe,
     RequestLineComponent,
     RequestLineCreateComponent,
-    RequestLineEditComponent
+    RequestLineEditComponent,
+    RequestReviewListComponent
   ],
   imports: [
     BrowserModule,
