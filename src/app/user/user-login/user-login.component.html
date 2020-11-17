@@ -1,0 +1,7 @@
+<app-menu></app-menu>
+<div>
+    <p>Log-in to system</p>
+    <p>Username: <input [(ngModel)]="username" type="text" (click)="newChanges()"></p>
+    <p>Password: <input [(ngModel)]="password" type="text" (click)="newChanges()" (enter)="login()"></p>
+    <button class="btn btn-primary" [ngClass]="btnlogin" (click)="login()">{{loginMsg}}</button>
+</div>

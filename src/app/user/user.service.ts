@@ -9,9 +9,16 @@ const baseurl: string = "http://localhost:8080/api/users";
 })
 export class UserService {
 
+  users: User[] = [];
+
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
+
+  login(username: string, password: string): Observable<User>
+  {
+    return this.http.get(`${baseurl}/${username}/${password}`) as Observable<User>;
+  }
 
   list(): Observable<User[]>
   {
