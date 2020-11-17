@@ -8,7 +8,7 @@
         </tr>
         <tr>
             <th scope="row">User</th>
-            <td><input [(ngModel)]="request.user.username" type="text" (click)="newChanges()"></td>
+            <td><input [(ngModel)]="request.user.username" type="text" (click)="newChanges()" disabled></td>
         </tr>
         <tr>
             <th scope="row">Description</th>
@@ -32,15 +32,15 @@
         </tr>
         <tr>
             <th scope="row">Date Submitted</th>
-            <td><input [(ngModel)]="request.submittedDate" type="text" (click)="newChanges()"></td>
+            <td><input [(ngModel)]="request.submittedDate" type="text" (click)="newChanges()" disabled></td>
         </tr>
         <tr>
             <th scope="row">Status</th>
-            <td><input [(ngModel)]="request.status" type="text" (click)="newChanges()"></td>
+            <td><input [(ngModel)]="request.status" type="text" (click)="newChanges()" disabled></td>
         </tr>
         <tr>
             <th scope="row">Reason for Rejection</th>
-            <td><input [(ngModel)]="request.reasonForRejection" type="text" (click)="newChanges()"></td>
+            <td><input [(ngModel)]="request.reasonForRejection" type="text" (click)="newChanges()" disabled></td>
         </tr>
         <tr>
             <td>

@@ -43,6 +43,7 @@ export class RequestEditComponent implements OnInit
 
   saveChanges(): void
   {
+    this.request.submittedDate="";
     this.requestsvc.edit(this.request).subscribe(
       res => {
         console.debug("Saved!");

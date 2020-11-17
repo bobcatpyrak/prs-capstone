@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RequestLine } from './requestLine.class';
 import { Observable } from 'rxjs';
 
-const baseurl: string = "http://localhost:8080/api/requestLines";
+const baseurl: string = "http://localhost:8080/api/lines";
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +12,11 @@ export class RequestLineService {
   constructor(
     private http: HttpClient
   ) { }
+
+  getLines(id: number): Observable<RequestLine[]>
+  {
+    return this.http.get(`${baseurl}/for-req/${id}`) as Observable<RequestLine[]>;
+  }
 
   list(): Observable<RequestLine[]>
   {

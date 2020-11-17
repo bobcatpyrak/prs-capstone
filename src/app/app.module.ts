@@ -28,6 +28,9 @@ import { RequestEditComponent } from './request/request-edit/request-edit.compon
 import { SortPipe } from './core/sort.pipe';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserSearchPipe } from './user/user-search.pipe';
+import { RequestLineComponent } from './requestline/requestline.component';
+import { RequestLineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+import { RequestLineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,10 @@ import { UserSearchPipe } from './user/user-search.pipe';
     RequestEditComponent,
     SortPipe,
     UserLoginComponent,
-    UserSearchPipe
+    UserSearchPipe,
+    RequestLineComponent,
+    RequestLineCreateComponent,
+    RequestLineEditComponent
   ],
   imports: [
     BrowserModule,

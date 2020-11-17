@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../product.class';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Vendor } from 'src/app/vendor/vendor.class';
+import { VendorService } from 'src/app/vendor/vendor.service';
 
 @Component({
   selector: 'app-product-edit',
@@ -10,13 +12,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductEditComponent implements OnInit 
 {
-  product: Product;
+  product: Product = new Product();
+  vendors: Vendor[] = [];
   btnsav: string = "btn btn-primary";
   btndel: string = "btn btn-danger";
   saveMsg: string = "Save";
 
   constructor(
     private productsvc: ProductService,
+    private vendorsvc: VendorService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -34,7 +38,24 @@ export class ProductEditComponent implements OnInit
         console.error(err);
       }
     );
+    this.vendorsvc.list().subscribe(
+      res => 
+      {
+        console.log(res);
+        this.vendors = res as Vendor[];
+      },
+      err =>
+      {
+        console.error(err);
+      }
+    );
   }
+
+  compareFn(a: Vendor, b: Vendor): boolean
+  {
+    return a.id === b.id;
+  }
+  
   newChanges(): void
   {
     this.btnsav = "btn btn-primary";

@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<div class="h3">Details for Line Item</div>
+<table class="table">
+    <tbody>
+        <tr>
+            <th scope="row">Request ID</th>
+            <td><input [(ngModel)]="requestline.request.id" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th scope="row">Product</th>
+            <td>
+                <select [(ngModel)]="requestline.product" [compareWith]="compareFn" (click)="newChanges()">
+                    <option *ngFor="let product of products" [ngValue]="product">{{product.name}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Quantity</th>
+            <td><input [(ngModel)]="requestline.quantity" type="text" (click)="newChanges()"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button"  [ngClass]="btnsav" class="btn btn-primary" (click)="saveChanges()">{{saveMsg}}</button>
+            </td>
+            <td>
+                <button type="button"  [ngClass]="btndel" class="btn btn-danger" routerLink="/requests/lines/{{requestline.request.id}}">Discard New Line Item</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

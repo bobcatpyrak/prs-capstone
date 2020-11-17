@@ -8,7 +8,11 @@
         </tr>
         <tr>
             <th scope="row">Vendor</th>
-            <td><input [(ngModel)]="product.vendor.name" type="text" (click)="newChanges()"></td>
+            <td>
+                <select [(ngModel)]="product.vendor" (click)="newChanges()">
+                    <option *ngFor="let vendor of vendors" [ngValue]="vendor">{{vendor.name}}</option>
+                </select>
+            </td>
         </tr>
         <tr>
             <th scope="row">Part Number</th>
