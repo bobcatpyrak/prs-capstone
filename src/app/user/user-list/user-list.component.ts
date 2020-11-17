@@ -11,6 +11,7 @@ export class UserListComponent implements OnInit {
 
   users: User[] = [];
   sortCriteria: string = "id";
+  searchCriteria: string = "";
   ascSequence: boolean = true;
 
   constructor(

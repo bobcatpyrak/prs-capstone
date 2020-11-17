@@ -27,7 +27,7 @@ import { ProductEditComponent } from './product/product-edit/product-edit.compon
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { SortPipe } from './core/sort.pipe';
 import { UserLoginComponent } from './user/user-login/user-login.component';
-import { SearchPipe } from './user/search.pipe';
+import { UserSearchPipe } from './user/user-search.pipe';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,7 @@ import { SearchPipe } from './user/search.pipe';
     RequestEditComponent,
     SortPipe,
     UserLoginComponent,
-    SearchPipe
+    UserSearchPipe
   ],
   imports: [
     BrowserModule,
