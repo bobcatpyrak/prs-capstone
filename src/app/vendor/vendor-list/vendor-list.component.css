@@ -10,3 +10,11 @@ div
 {
     background-color: burlywood;
 }
+td
+{
+    background-color: beige
+}
+button
+{
+    vertical-align: top;
+}

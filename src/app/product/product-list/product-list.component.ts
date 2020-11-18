@@ -10,7 +10,7 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit {
 
   products: Product[] = [];
-  sortCriteria: string = "id";
+  sortCriteria: string = "vendorName";
   ascSequence: boolean = true;
 
   constructor(

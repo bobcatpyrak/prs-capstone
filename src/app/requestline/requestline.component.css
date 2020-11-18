@@ -25,4 +25,15 @@ span
     color: #0056b3;
     text-decoration: underline;
 }
-  
+td
+{
+    background-color: beige
+}
+img
+{
+    height: 150px;
+}
+button
+{
+    vertical-align: top;
+}

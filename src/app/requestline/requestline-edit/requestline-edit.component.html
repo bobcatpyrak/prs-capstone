@@ -5,6 +5,7 @@
         <tr>
             <th scope="row">Request ID</th>
             <td><input [(ngModel)]="requestline.request.id" type="text" disabled></td>
+            <td></td>
         </tr>
         <tr>
             <th scope="row">Product</th>
@@ -13,10 +14,12 @@
                     <option *ngFor="let product of products" [ngValue]="product">{{product.name}}</option>
                 </select>
             </td>
+            <td><img src="{{requestline.product.photoPath}}"></td>
         </tr>
         <tr>
             <th scope="row">Quantity</th>
             <td><input [(ngModel)]="requestline.quantity" type="text" (click)="newChanges()"></td>
+            <td></td>
         </tr>
         <tr>
             <td>
@@ -25,6 +28,7 @@
             <td>
                 <button type="button"  [ngClass]="btndel" class="btn btn-danger" routerLink="/requests/lines/{{requestline.request.id}}">Discard Changes</button>
             </td>
+            <td></td>
         </tr>
     </tbody>
 </table>

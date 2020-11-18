@@ -10,3 +10,15 @@ div
 {
     background-color: burlywood;
 }
+img
+{
+    height: 150px;
+}
+td
+{
+    background-color: beige
+}
+button
+{
+    vertical-align: top;
+}

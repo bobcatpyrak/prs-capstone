@@ -5,30 +5,37 @@
         <tr>
             <th scope="row">ID</th>
             <td><input [(ngModel)]="product.id" type="text" disabled></td>
+            <td></td>
         </tr>
         <tr>
             <th scope="row">Vendor</th>
             <td><input [(ngModel)]="product.vendor.name" type="text" disabled disabled></td>
+            <td></td>
         </tr>
         <tr>
             <th scope="row">Part Number</th>
             <td><input [(ngModel)]="product.partNumber" type="text" disabled></td>
+            <td></td>
         </tr>
         <tr>
             <th scope="row">Name</th>
             <td><input [(ngModel)]="product.name" type="text" disabled></td>
+            <td></td>
         </tr>
         <tr>
             <th scope="row">Price</th>
             <td><input [(ngModel)]="product.price" type="text" disabled></td>
+            <td></td>
         </tr>
         <tr>
             <th scope="row">Unit</th>
             <td><input [(ngModel)]="product.unit" type="text" disabled></td>
+            <td></td>
         </tr>
         <tr>
             <th scope="row">Image</th>
             <td><input [(ngModel)]="product.photoPath" type="text" disabled></td>
+            <td><img src="{{product.photoPath}}"></td>
         </tr>
         <tr>
             <td>
@@ -37,6 +44,7 @@
             <td>
                 <button type="button"  [ngClass]="btndel" class="btn btn-danger" (click)="deleteProduct()">Delete Product</button>
             </td>
+            <td></td>
         </tr>
     </tbody>
 </table>

@@ -23,7 +23,7 @@
             <td>{{product.partNumber}}</td>
             <td>{{product.name}}</td>
             <td>{{product.price}}</td>
-            <td>{{product.photoPath}}</td>
+            <td><img src="{{product.photoPath}}"></td>
             <td>
                 <a routerLink="/products/detail/{{product.id}}">Details</a> | 
                 <a routerLink="/products/edit/{{product.id}}">Edit</a>
