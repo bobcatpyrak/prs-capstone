@@ -51,14 +51,17 @@ export class RequestReviewItemComponent implements OnInit
 
   rejectRequest():void
   {
-    this.requestsvc.reject(this.request).subscribe(
-      res =>{
-        console.debug("Request Rejected");
-      },
-      err => {
-        console.error("Failed to reject", err);
-      }
-    )
+    if(this.request.reasonForRejection != "")
+      this.requestsvc.reject(this.request).subscribe(
+        res =>{
+          console.debug("Request Rejected");
+          this.router.navigateByUrl("/requests/review");
+        },
+        err => {
+          console.error("Failed to reject", err);
+        }
+      )
+    
   }
 
   approveRequest():void
@@ -66,6 +69,7 @@ export class RequestReviewItemComponent implements OnInit
     this.requestsvc.approve(this.request).subscribe(
       res =>{
         console.debug("Request Approved");
+        this.router.navigateByUrl("/requests/review");
       },
       err => {
         console.error("Failed to approve", err);
