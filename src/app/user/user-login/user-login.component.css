@@ -5,4 +5,12 @@ div
     vertical-align: middle;
     text-align: center;
     background-color: wheat;
+    width: 30%;
+    margin: auto;
+}
+.btn-primary
+{
+    background-color: darkblue;
+    border-color: black;
+    margin-bottom: 5px;
 }

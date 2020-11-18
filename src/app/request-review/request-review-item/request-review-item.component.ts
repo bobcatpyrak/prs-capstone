@@ -4,6 +4,7 @@ import { RequestLine } from 'src/app/requestline/requestline.class';
 import { RequestLineService } from 'src/app/requestline/requestline.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from 'src/app/request/request.service';
+import { SystemService } from 'src/app/core/system.service';
 
 @Component({
   selector: 'app-request-review-item',
@@ -19,12 +20,16 @@ export class RequestReviewItemComponent implements OnInit
   constructor(
     private requestsvc: RequestService,
     private linessvc: RequestLineService,
+    private syssvc: SystemService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void 
   {
+    this.syssvc.checkLogin();
+    if(!this.syssvc.isReviewer)
+      this.router.navigateByUrl("/home");
     let id = this.route.snapshot.params.id;
 
     this.requestsvc.get(id).subscribe(
@@ -48,6 +53,10 @@ export class RequestReviewItemComponent implements OnInit
     );
   }
 
+  multiply(a: number, b: number):number
+  {
+    return (a*b);
+  }
 
   rejectRequest():void
   {

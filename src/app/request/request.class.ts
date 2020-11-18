@@ -18,4 +18,9 @@ export class Request
     {
 
     }
+
+    getTotal(): string
+    {
+        return `'$'${this.total}`;
+    }
 }

@@ -4,6 +4,7 @@ import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
 import { Vendor } from 'src/app/vendor/vendor.class';
 import { VendorService } from 'src/app/vendor/vendor.service';
+import { SystemService } from 'src/app/core/system.service';
 
 @Component({
   selector: 'app-product-create',
@@ -21,11 +22,14 @@ export class ProductCreateComponent implements OnInit
   constructor(
     private productsvc: ProductService,
     private vendorsvc: VendorService,
+    private syssvc: SystemService,
     private router: Router
   ) { }
 
   ngOnInit(): void 
   {
+    this.syssvc.checkLogin();
+
     this.vendorsvc.list().subscribe(
       res => 
       {

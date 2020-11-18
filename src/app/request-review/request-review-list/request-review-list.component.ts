@@ -3,6 +3,7 @@ import { RequestService } from 'src/app/request/request.service';
 import { Request } from 'src/app/request/request.class';
 import { SystemService } from 'src/app/core/system.service';
 import { User } from 'src/app/user/user.class';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,11 +20,16 @@ export class RequestReviewListComponent implements OnInit {
 
   constructor(
     private requestsvc: RequestService,
-    private syssvc: SystemService
+    private syssvc: SystemService,
+    private router: Router
   ) { }
 
   ngOnInit(): void 
   {
+    this.syssvc.checkLogin();
+    if(!this.syssvc.isReviewer)
+      this.router.navigateByUrl("/home");
+
     this.user = this.syssvc.user;
     console.log(this.syssvc.user);
     console.log(this.user);

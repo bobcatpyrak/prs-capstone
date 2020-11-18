@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Request } from '../request/request.class';
 import { RequestLine } from './requestline.class';
 import { RequestLineService } from './requestline.service';
+import { SystemService } from '../core/system.service';
 
 @Component({
   selector: 'app-requestline',
@@ -18,12 +19,15 @@ export class RequestLineComponent implements OnInit
   constructor(
     private requestsvc: RequestService,
     private linessvc: RequestLineService,
+    private syssvc: SystemService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void 
   {
+    this.syssvc.checkLogin();
+
     let id = this.route.snapshot.params.id;
 
     this.requestsvc.get(id).subscribe(
@@ -45,6 +49,11 @@ export class RequestLineComponent implements OnInit
         console.error(err);
       }
     );
+  }
+
+  multiply(a: number, b: number):number
+  {
+    return (a*b);
   }
 
   refreshLines():void

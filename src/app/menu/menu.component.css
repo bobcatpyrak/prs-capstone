@@ -7,8 +7,13 @@ li
     display: inline;
     padding: 20px;
     font-weight: bold;
+    color: wheat;
 }
 a
 {
     color: wheat
+}
+#title
+{
+    color: goldenrod
 }

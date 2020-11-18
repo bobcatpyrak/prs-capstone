@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vendor } from '../vendor.class';
 import { VendorService } from '../vendor.service';
+import { SystemService } from 'src/app/core/system.service';
 
 @Component({
   selector: 'app-vendor-list',
@@ -14,11 +15,14 @@ export class VendorListComponent implements OnInit {
   ascSequence: boolean = true;
 
   constructor(
-    private vendorsvc: VendorService
+    private vendorsvc: VendorService,
+    private syssvc: SystemService
   ) { }
 
   ngOnInit(): void 
   {
+    this.syssvc.checkLogin();
+
     this.vendorsvc.list().subscribe(
       res => 
       {

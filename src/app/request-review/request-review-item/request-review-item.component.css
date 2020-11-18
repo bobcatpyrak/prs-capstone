@@ -29,3 +29,13 @@ td
 {
     background-color: beige
 }
+.btn-danger
+{
+    background-color: darkred;
+    border-color: black;
+}
+.btn-primary
+{
+    background-color: darkblue;
+    border-color: black;
+}

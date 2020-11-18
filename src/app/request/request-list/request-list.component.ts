@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Request } from '../request.class';
 import { RequestService } from '../request.service';
+import { SystemService } from 'src/app/core/system.service';
 
 @Component({
   selector: 'app-request-list',
@@ -14,11 +15,14 @@ export class RequestListComponent implements OnInit {
   ascSequence: boolean = true;
 
   constructor(
-    private requestsvc: RequestService
+    private requestsvc: RequestService,
+    private syssvc: SystemService
   ) { }
 
   ngOnInit(): void 
   {
+    this.syssvc.checkLogin();
+
     this.requestsvc.list().subscribe(
       res => 
       {

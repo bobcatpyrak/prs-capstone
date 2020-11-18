@@ -4,6 +4,7 @@ import { Product } from '../product.class';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Vendor } from 'src/app/vendor/vendor.class';
 import { VendorService } from 'src/app/vendor/vendor.service';
+import { SystemService } from 'src/app/core/system.service';
 
 @Component({
   selector: 'app-product-edit',
@@ -22,11 +23,14 @@ export class ProductEditComponent implements OnInit
     private productsvc: ProductService,
     private vendorsvc: VendorService,
     private route: ActivatedRoute,
+    private syssvc: SystemService,
     private router: Router
   ) { }
 
   ngOnInit(): void 
   {
+    this.syssvc.checkLogin();
+
     let id = this.route.snapshot.params.id;
 
     this.productsvc.get(id).subscribe(

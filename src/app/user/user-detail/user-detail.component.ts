@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.class';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from 'src/app/core/system.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -18,11 +19,14 @@ export class UserDetailComponent implements OnInit
   constructor(
     private usersvc: UserService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private syssvc: SystemService
   ) { }
 
   ngOnInit(): void 
   {
+    this.syssvc.checkLogin();
+
     let id = this.route.snapshot.params.id;
 
     this.usersvc.get(id).subscribe(

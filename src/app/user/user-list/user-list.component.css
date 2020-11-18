@@ -26,3 +26,8 @@ button
     border-color: wheat;
     font-size: 1.4rem;
 }
+.btn-primary
+{
+    background-color: darkblue;
+    border-color: black;
+}

@@ -24,6 +24,7 @@ export class UserLoginComponent implements OnInit
 
   ngOnInit(): void 
   {
+    this.syssvc.user = null;
   }
   
   login():void
@@ -31,13 +32,13 @@ export class UserLoginComponent implements OnInit
     this.usersvc.login(this.username, this.password).subscribe(
       res => 
       {
-        this.syssvc.user = res;
+        this.syssvc.user = res as User;
         console.log(this.syssvc.user);
         this.router.navigateByUrl("/home");
       },
       err =>
       {
-        this.loginMsg = "Failed!"
+        this.loginMsg = "Invalid username and/or password!"
         this.btnlogin = "btn btn-danger";
         console.error(err);
       }

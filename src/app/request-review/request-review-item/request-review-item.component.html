@@ -46,7 +46,7 @@
             <th></th>
             <td>{{l.product.name}}</td>
             <td>{{l.quantity}}</td>
-            <td>{{l.product.price}}*{{l.quantity}}</td>
+            <td>$multiply({{l.product.price}},{{l.quantity}})</td>
         </tr>
     </tbody>
 </table>
@@ -58,7 +58,7 @@
                 <input type="text" [(ngModel)]="request.reasonForRejection" placeholder="Reason for Rejection">
                 <span><button type="button" class="btn btn-danger" (click)="rejectRequest()">Reject</button></span>
             </th>
-            <th scope="col"><button type="button" class="btn btn-success" (click)="approveRequest()">Approve</button></th>
+            <th scope="col"><button type="button" class="btn btn-primary" (click)="approveRequest()">Approve</button></th>
         </tr>
     </thead>
     </table>

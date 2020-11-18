@@ -5,6 +5,7 @@ import { RequestLineService } from '../requestline.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/product/product.class';
 import { ProductService } from 'src/app/product/product.service';
+import { SystemService } from 'src/app/core/system.service';
 
 @Component({
   selector: 'app-requestline-edit',
@@ -22,12 +23,15 @@ export class RequestLineEditComponent implements OnInit
   constructor(
     private requestlinesvc: RequestLineService,
     private productsvc: ProductService,
+    private syssvc: SystemService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void 
   {
+    this.syssvc.checkLogin();
+
     let id = this.route.snapshot.params.id;
 
     this.requestlinesvc.get(id).subscribe(

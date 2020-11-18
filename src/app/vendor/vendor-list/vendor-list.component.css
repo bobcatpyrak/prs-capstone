@@ -18,3 +18,8 @@ button
 {
     vertical-align: top;
 }
+.btn-primary
+{
+    background-color: darkblue;
+    border-color: black;
+}

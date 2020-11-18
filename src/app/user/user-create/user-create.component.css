@@ -6,3 +6,13 @@ div
 {
     background-color: burlywood;
 }
+.btn-primary
+{
+    background-color: darkblue;
+    border-color: black;
+}
+.btn-danger
+{
+    background-color: darkred;
+    border-color: black;
+}
