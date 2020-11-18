@@ -28,7 +28,7 @@ export class RequestReviewListComponent implements OnInit {
     console.log(this.syssvc.user);
     console.log(this.user);
 
-    this.requestsvc.requests(this.user.id).subscribe(
+    this.requestsvc./*requests(this.user.id)*/list().subscribe(
       res => 
       {
         console.log(res);

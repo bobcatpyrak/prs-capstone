@@ -1,7 +1,6 @@
 <app-menu></app-menu>
 <div>
     <span class="h3">Requests in Review</span>
-    <span><button type="button" class="btn btn-primary" routerLink="/requests/create">New Request</button></span>
 </div>
 
 <table class="table">
@@ -14,7 +13,6 @@
             <th scope="col">Total</th>
             <th scope="col"><a (click)="sortColumn('submittedDate')">Date Submitted</a></th>
             <th scope="col"><a (click)="sortColumn('dateNeeded')">Deadline</a></th>
-            <th scope="col"><a (click)="sortColumn('status')">Status</a></th>
             <th scope="col">Actions</th>
         </tr>
     </thead>
@@ -27,11 +25,8 @@
             <td>{{request.total}}</td>
             <td>{{request.submittedDate}}</td>
             <td>{{request.dateNeeded}}</td>
-            <td>{{request.status}}</td>
             <td>
-                <a routerLink="/requests/detail/{{request.id}}">Details</a> | 
-                <a routerLink="/requests/edit/{{request.id}}">Edit</a> | 
-                <a routerLink="/requests/lines/{{request.id}}">Line</a>
+                <a routerLink="/requests/review/{{request.id}}">Review</a>
             </td>
         </tr>
     </tbody>

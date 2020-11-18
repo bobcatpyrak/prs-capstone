@@ -79,8 +79,10 @@ export class RequestLineComponent implements OnInit
 
   submit():void
   {
+    this.request.reasonForRejection = "";
     this.requestsvc.review(this.request).subscribe(
       res =>{
+
         console.debug("Submitted for review");
         this.refreshRequest();
       },

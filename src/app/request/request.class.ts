@@ -3,7 +3,7 @@ import { User } from '../user/user.class';
 export class Request
 {
     id: number = 0;
-    user: User;
+    user: User = new User();
     description: string = "";
     justification: string = "";
     dateNeeded: string = "";

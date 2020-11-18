@@ -7,9 +7,11 @@
             <th scope="col">ID</th>
             <th scope="col">User</th>
             <th scope="col">Description</th>
+            <th scope="col">Justification</th>
             <th scope="col">Total</th>
+            <th scope="col">Delivery Mode</th>
+            <th scope="col">Deadline</th>
             <th scope="col">Status</th>
-            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -18,15 +20,16 @@
             <td>{{request.id}}</td>
             <td>{{request.user.username}}</td>
             <td>{{request.description}}</td>
+            <td>{{request.justification}}</td>
             <td>{{request.total}}</td>
+            <td>{{request.deliveryMode}}</td>
+            <td>{{request.dateNeeded}}</td>
             <td>{{request.status}}</td>
-            <td><button type="button" class="btn btn-primary" (click)="submit()" *ngIf='request.status != "Approved"'>Submit For Review</button></td>
         </tr>
     </tbody>
 </table>
 <div>
     <span class="h3">Line Items</span>
-    <span><button type="button" class="btn btn-primary" routerLink="/requests/lines/create/{{request.id}}" *ngIf='request.status != "Approved"'>Add</button></span>
 </div>
     
 <table class="table">
@@ -36,7 +39,6 @@
             <th scope="col">Product</th>
             <th scope="col">Quantity</th>
             <th scope="col">Total</th>
-            <th scop="col">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -45,10 +47,18 @@
             <td>{{l.product.name}}</td>
             <td>{{l.quantity}}</td>
             <td>{{l.product.price}}*{{l.quantity}}</td>
-            <td *ngIf='request.status != "Approved"'>
-                <a routerLink="/requests/lines/edit/{{l.id}}">Edit</a> |
-                <a id="deleteLink" (click)="deleteLine(l)">Delete</a>
-            </td>
         </tr>
     </tbody>
 </table>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th scope="col">
+                <input type="text" [(ngModel)]="request.reasonForRejection" placeholder="Reason for Rejection">
+                <span><button type="button" class="btn btn-danger" (click)="rejectRequest()">Reject</button></span>
+            </th>
+            <th scope="col"><button type="button" class="btn btn-success" (click)="approveRequest()">Approve</button></th>
+        </tr>
+    </thead>
+    </table>
