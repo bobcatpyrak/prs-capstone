@@ -46,7 +46,7 @@
             <td>{{l.product.name}}</td>
             <td><img src="{{l.product.photoPath}}"></td>
             <td>{{l.quantity}}</td>
-            <td>$multiply({{l.product.price}},{{l.quantity}})</td>
+            <td>${{l.quantity*l.product.price}}</td>
             <td *ngIf='request.status != "Approved"'>
                 <a routerLink="/requests/lines/edit/{{l.id}}">Edit</a> |
                 <a id="deleteLink" (click)="deleteLine(l)">Delete</a>

@@ -37,6 +37,7 @@
         <tr>
             <th></th>
             <th scope="col">Product</th>
+            <th></th>
             <th scope="col">Quantity</th>
             <th scope="col">Total</th>
         </tr>
@@ -45,8 +46,9 @@
         <tr *ngFor="let l of lines">
             <th></th>
             <td>{{l.product.name}}</td>
+            <td><img src="{{l.product.photoPath}}"></td>
             <td>{{l.quantity}}</td>
-            <td>$multiply({{l.product.price}},{{l.quantity}})</td>
+            <td>${{l.quantity*l.product.price}}</td>
         </tr>
     </tbody>
 </table>

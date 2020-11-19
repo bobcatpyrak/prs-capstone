@@ -39,3 +39,7 @@ td
     background-color: darkblue;
     border-color: black;
 }
+img
+{
+    height: 150px;
+}
