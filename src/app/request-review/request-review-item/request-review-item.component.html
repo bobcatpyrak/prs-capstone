@@ -57,7 +57,7 @@
         <tr>
             <th></th>
             <th scope="col">
-                <input type="text" [(ngModel)]="request.reasonForRejection" placeholder="Reason for Rejection">
+                <input type="text" [(ngModel)]="request.reasonForRejection"  size="35" placeholder="Reason for Rejection">
                 <span><button type="button" class="btn btn-danger" (click)="rejectRequest()">Reject</button></span>
             </th>
             <th scope="col"><button type="button" class="btn btn-primary" (click)="approveRequest()">Approve</button></th>

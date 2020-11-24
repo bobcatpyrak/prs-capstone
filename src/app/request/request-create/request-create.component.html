@@ -3,36 +3,20 @@
 <table class="table">
     <tbody>
         <tr>
-            <th scope="row">ID</th>
-            <td><input [(ngModel)]="request.id" type="text" disabled></td>
-        </tr>
-        <tr>
-            <th scope="row">User</th>
-            <td><input [(ngModel)]="request.user.username" type="text" (click)="newChanges()"></td>
-        </tr>
-        <tr>
             <th scope="row">Description</th>
-            <td><input [(ngModel)]="request.description" type="text" (click)="newChanges()"></td>
+            <td><input [(ngModel)]="request.description" type="text" size="50" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Justification</th>
-            <td><input [(ngModel)]="request.justification" type="text" (click)="newChanges()"></td>
+            <td><input [(ngModel)]="request.justification" type="text" size="50" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Delivery Mode</th>
-            <td><input [(ngModel)]="request.deliveryMode" type="text" (click)="newChanges()"></td>
-        </tr>
-        <tr>
-            <th scope="row">Total</th>
-            <td>$<input [(ngModel)]="request.total" type="text" (click)="newChanges()"></td>
+            <td><input [(ngModel)]="request.deliveryMode" type="text" size="50" (click)="newChanges()"></td>
         </tr>
         <tr>
             <th scope="row">Date Needed</th>
             <td><input [(ngModel)]="request.dateNeeded" type="date" (click)="newChanges()"></td>
-        </tr>
-        <tr>
-            <th scope="row">Status</th>
-            <td><input [(ngModel)]="request.status" type="text" (click)="newChanges()" disabled></td>
         </tr>
         <tr>
             <td>
